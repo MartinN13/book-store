@@ -26,6 +26,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'devise'
 # Use paperclip for image uploads
 gem "paperclip", "~> 4.3"
+# Use AWS S3 for image storage
+gem 'aws-sdk', '~> 2'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

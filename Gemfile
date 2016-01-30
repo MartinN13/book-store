@@ -28,6 +28,9 @@ gem 'devise'
 gem "paperclip", "~> 4.3"
 # Use AWS S3 for image storage
 gem 'aws-sdk', '~> 2'
+# Add simple pagination support
+gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -6,7 +6,6 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @books = Book.all.order("created_at ASC").paginate(:page => params[:page], :per_page => 8)
-    @headerBook = Book.first
   end
 
   # GET /books/1

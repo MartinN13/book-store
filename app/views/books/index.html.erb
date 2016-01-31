@@ -2,10 +2,11 @@
 
 <div class="banner">
   <% unless @books.first.nil? %>
-    <%= link_to image_tag(@books.first.image.url), @books.first, class: 'banner-book-image' %>
+    <%= link_to image_tag(@books.first.image.url), @books.first, class: 'banner-image' %>
     <h2 class="banner-title"><%= @books.first.title %></h2>
     <p class="banner-author">by <%= @books.first.author %></p>
     <p class="banner-description"><%= @books.first.description %></p>
+    <%= link_to 'See The Book', @books.first, class: 'banner-button' %>
   <% end %>
 </div>
 
@@ -33,7 +34,16 @@
 </div>
 
 <div class="main-content">
-  <h2>Popular by Genre</h2>
+  <div class="row vertical-align">
+    <h2 class="main-title">Popular by Genre</h2>
+    <p class="main-category">Biography</p>
+    <p class="main-category">Philosophy</p>
+    <p class="main-category">Fiction</p>
+    <p class="main-category">Science</p>
+    <p class="main-category">Business</p>
+    <p class="main-category main-category-bold">All Genres</p>
+  </div>
+  <div class="separator"></div>
   <% @books.each do |book| %>
     <div class="col-md-4">
       <%= link_to image_tag(book.image.url), book, class: 'book-image' %>

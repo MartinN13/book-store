@@ -1,14 +1,112 @@
 /* bootstrap variables */
 $navbar-default-bg: white;
+$navbar-height: 78px;
+$navbar-margin-bottom: 0px;
 
 /* import bootstrap */
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 /* style */
+body {
+  background-color: #f2f5f7;
+}
 
+img {
+  min-width:100%;
+  min-height:100%;
+  max-width:100%;
+  max-height:100%;
+}
+/* banner */
+.banner {
+  height: 350px;
+  width: 620px;
+  background: linear-gradient(to right, #d090b3 0%,#edb9e6 100%);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 170px;
+  float: none;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  font-size: 0;
+  position: relative;
+}
+.banner-book-image {
+  top: 44px;
+  left: 42px;
+  position: absolute;
+  height: 366px;
+  width: 244px;
+  display: block;
+  margin: 0;
+  box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.5);
+}
+.banner-title {
+  top: 44px;
+  left: 326px;
+  font-size: 20px;
+  font-weight: 600;
+  position: absolute;
+  display: block;
+  color: white;
+  margin: 0;
+}
+.banner-author {
+  top: 70px;
+  left: 326px;
+  font-size: 13px;
+  font-weight: 200;
+  position: absolute;
+  display: block;
+  color: white;
+  margin: 0;
+}
+.banner-description {
+  top: 144px;
+  left: 326px;
+  height: 90px;
+  width: 260px;
+  font-size: 16px;
+  font-weight: 200;
+  position: absolute;
+  display: block;
+  color: white;
+  margin: 0;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+/* book list */
+.book-image {
+  height: 230px;
+  width: 145px;
+  display: block;
+  box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.5);
+}
+
+.book-description {
+  word-break: break-all;
+}
+/* various elements */
 .footer {
   width: 100%;
   height: 100px;
-  background-color: #f5f5f5;
+  background-color: #f2f5f7;
+  border-top: 1px solid transparent;
+  border-color: #e7e7e7;
+}
+.navbar-brand {
+  line-height: 48px;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  left: calc(50% - 58.5px)
+}
+
+/* media queries */
+@media (min-width: 768px) {
+  .navbar-nav li a {
+    line-height: 46px;
+  }
 }

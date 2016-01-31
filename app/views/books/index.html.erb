@@ -7,32 +7,48 @@
   <p class="banner-description"><%= @headerBook.description %></p>
 </div>
 
-<h1>Author of the week</h1>
-<% @books.each do |book| %>
-  <div class="row">
-    <div class="col-md-2">
-      <p class="author-week"><%= book.author %></p>
+<div class="sidebar">
+  <div class="authors-of-the-week">
+  <h2 class="of-the-h2">Authors of the week</h2>
+  <% @books.each do |book| %>
+    <div class="row">
+      <div class="col-md-6">
+        <p class="author-week"><%= book.author %></p>
+      </div>
     </div>
+  <% end %>
   </div>
-<% end %>
-
-<h1>Popular by Genre</h1>
-<% @books.each do |book| %>
-  <div class="col-md-4">
-    <%= link_to image_tag(book.image.url), book, class: 'book-image' %>
-    <h2 class="title"><%= book.title %></h2>
-    <p class="author">by <%= book.author %></p>
-    <p class="description"><%= book.description %></p>
-    <% if user_signed_in? %>
-      <%= link_to 'Show', book %>
-      <%= link_to 'Edit', edit_book_path(book) %>
-      <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
+  <div class="books-of-the-year">
+  <h2>Books of the week</h2>
+  <% @books.each do |book| %>
+    <div class="row">
+      <div class="col-md-6">
+        <p class="author-week"><%= book.title %></p>
+      </div>
+    </div>
+  <% end %>
   </div>
-<% end %>
+</div>
 
-<br>
-
-<% if user_signed_in? %>
-  <%= link_to 'New Book', new_book_path %>
-<% end %>
+<div class="main-content">
+  <h2>Popular by Genre</h2>
+  <% @books.each do |book| %>
+    <div class="col-md-4">
+      <%= link_to image_tag(book.image.url), book, class: 'book-image' %>
+      <h2 class="title"><%= book.title %></h2>
+      <p class="author">by <%= book.author %></p>
+      <p class="description"><%= book.description %></p>
+      <% if user_signed_in? %>
+        <%= link_to 'Show', book %>
+        <%= link_to 'Edit', edit_book_path(book) %>
+        <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
+  <% end %>
+  
+  <br>
+  
+  <% if user_signed_in? %>
+    <%= link_to 'New Book', new_book_path %>
+  <% end %>
+</div>

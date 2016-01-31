@@ -27,7 +27,7 @@ gem 'devise'
 # Use paperclip for image uploads
 gem "paperclip", "~> 4.3"
 # Use AWS S3 for image storage
-gem 'aws-sdk', '~> 2'
+gem 'aws-sdk', '< 2.0'
 # Add simple pagination support
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'

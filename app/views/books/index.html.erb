@@ -1,69 +1,96 @@
 <%= will_paginate @books, renderer: BootstrapPagination::Rails %>
 
-<div class="banner">
-  <% unless @books.first.nil? %>
-    <%= link_to image_tag(@books.first.image.url), @books.first, class: 'banner-image' %>
-    <h2 class="banner-title"><%= @books.first.title %></h2>
-    <p class="banner-author">by <%= @books.first.author %></p>
-    <p class="banner-description"><%= @books.first.description %></p>
-    <%= link_to 'See The Book', @books.first, class: 'banner-button' %>
-  <% end %>
+<div class="row">
+  <div class="jcarousel-wrapper">
+      <div class="jcarousel">
+        <ul>
+          <li class="left-banner">
+            <% unless @books.find_by_id(1).nil? %>
+              <%= link_to image_tag(@books.find_by_id(1).image.url), @books.find_by_id(1), class: 'banner-image' %>
+              <h2 class="banner-title"><%= @books.find_by_id(1).title %></h2>
+              <p class="banner-author">by <%= @books.find_by_id(1).author %></p>
+              <p class="banner-description"><%= @books.find_by_id(1).description %></p>
+              <%= link_to 'See The Book', @books.find_by_id(1), class: 'banner-button' %>
+            <% end %>
+          </li>
+          <li class="center-banner">
+            <% unless @books.find_by_id(2).nil? %>
+              <%= link_to image_tag(@books.find_by_id(2).image.url), @books.find_by_id(2), class: 'banner-image' %>
+              <h2 class="banner-title"><%= @books.find_by_id(2).title %></h2>
+              <p class="banner-author">by <%= @books.find_by_id(2).author %></p>
+              <p class="banner-description"><%= @books.find_by_id(2).description %></p>
+              <%= link_to 'See The Book', @books.find_by_id(2), class: 'banner-button' %>
+            <% end %>
+          </li>
+          <li class="right-banner">
+            <% unless @books.find_by_id(3).nil? %>
+              <%= link_to image_tag(@books.find_by_id(3).image.url), @books.find_by_id(3), class: 'banner-image' %>
+              <h2 class="banner-title"><%= @books.find_by_id(3).title %></h2>
+              <p class="banner-author">by <%= @books.find_by_id(3).author %></p>
+              <p class="banner-description"><%= @books.find_by_id(3).description %></p>
+              <%= link_to 'See The Book', @books.find_by_id(3), class: 'banner-button' %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+
+      <a href="#" class="jcarousel-control-prev">&lsaquo; Prev</a>
+      <a href="#" class="jcarousel-control-next">Next &rsaquo;</a>
+
+      <p class="jcarousel-pagination"></p>
+  </div>
 </div>
 
-<div class="sidebar">
-  <div class="authors-of-the-week">
-  <h2 class="of-the-h2">Authors of the week</h2>
-  <% @books.each do |book| %>
-    <div class="row">
-      <div class="col-md-10">
-        <p class="author-week-author"><%= book.author %></p>
+<div class="container-fluid">
+  <div class="sidebar">
+    <div class="authors-of-the-week">
+    <h2 class="of-the-h2">Authors of the week</h2>
+    <% @books.each do |book| %>
+      <div class="row">
+        <div class="col-md-10">
+          <p class="author-week-author"><%= book.author %></p>
+        </div>
       </div>
+    <% end %>
     </div>
-  <% end %>
-  </div>
-  <div class="books-of-the-week">
-  <h2 class="book-week-margin-1">Books of the week</h2>
-  <% @books.each do |book| %>
-    <div class="row book-week-margin-2">
-      <div class="col-md-10">
-        <%= link_to image_tag(book.image.url), book, class: 'book-week-image' %>
-        <p class="book-week-title"><%= book.title %></p>
-        <p class="book-week-author">by <%= book.author %></p>
+    <div class="books-of-the-week">
+    <h2 class="book-week-margin-1">Books of the week</h2>
+    <% @books.each do |book| %>
+      <div class="row book-week-margin-2">
+        <div class="col-md-10">
+          <%= link_to image_tag(book.image.url), book, class: 'book-week-image' %>
+          <p class="book-week-title"><%= book.title %></p>
+          <p class="book-week-author">by <%= book.author %></p>
+        </div>
       </div>
+    <% end %>
     </div>
-  <% end %>
   </div>
-</div>
-
-<div class="main-content">
-  <div class="row vertical-align">
-    <h2 class="main-title">Popular by Genre</h2>
-    <p class="main-category">Biography</p>
-    <p class="main-category">Philosophy</p>
-    <p class="main-category">Fiction</p>
-    <p class="main-category">Science</p>
-    <p class="main-category">Business</p>
-    <p class="main-category main-category-bold">All Genres</p>
-  </div>
-  <div class="separator"></div>
-  <% @books.each do |book| %>
-    <div class="col-md-4">
-      <%= link_to image_tag(book.image.url), book, class: 'book-image' %>
-      <h2 class="book-title"><%= book.title %></h2>
-      <p class="book-author">by <%= book.author %></p>
-      <p class="book-description"><%= book.description %></p>
-      <div class="book-separator"></div>
-      <% if user_signed_in? %>
-        <%= link_to 'Show', book %>
-        <%= link_to 'Edit', edit_book_path(book) %>
-        <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
+  
+  <div class="main-content">
+    <div class="row vertical-align">
+      <h2 class="main-title">Popular by Genre</h2>
+      <p class="main-category">Biography</p>
+      <p class="main-category">Philosophy</p>
+      <p class="main-category">Fiction</p>
+      <p class="main-category">Science</p>
+      <p class="main-category">Business</p>
+      <p class="main-category main-category-bold">All Genres</p>
     </div>
-  <% end %>
-  
-  <br>
-  
-  <% if user_signed_in? %>
-    <%= link_to 'New Book', new_book_path %>
-  <% end %>
+    <div class="separator"></div>
+    <% @books.each do |book| %>
+      <div class="col-md-4">
+        <%= link_to image_tag(book.image.url), book, class: 'book-image' %>
+        <h2 class="book-title"><%= book.title %></h2>
+        <p class="book-author">by <%= book.author %></p>
+        <p class="book-description"><%= book.description %></p>
+        <div class="book-separator"></div>
+        <% if user_signed_in? %>
+          <%= link_to 'Show', book %>
+          <%= link_to 'Edit', edit_book_path(book) %>
+          <%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>

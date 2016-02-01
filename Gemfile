@@ -31,6 +31,8 @@ gem 'aws-sdk', '< 2.0'
 # Add simple pagination support
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
+# Fix turbolinks compatibility issues with JQuery
+gem 'jquery-turbolinks'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

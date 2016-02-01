@@ -2,6 +2,7 @@
 $navbar-default-bg: white;
 $navbar-height: 78px;
 $navbar-margin-bottom: 0px;
+$navbar-border-radius: 0;
 
 /* import bootstrap */
 @import "bootstrap-sprockets";
@@ -30,19 +31,49 @@ img {
   max-width:100%;
   max-height:100%;
 }
+/* carousel */
+.jcarousel {
+  position: relative;
+  overflow: hidden;
+}
+.jcarousel ul {
+  width: 1860px;
+  left: -610px;
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.jcarousel li {
+  float: left;
+}
+
 /* banner */
-.banner {
+.left-banner {
   height: 350px;
   width: 620px;
-  background: linear-gradient(to right, #d090b3 0%,#edb9e6 100%);
-  margin-left: auto;
-  margin-right: auto;
+  background: linear-gradient(to right, #d19092 0%, #fbadaf 100%);
   margin-bottom: 170px;
-  float: none;
+  position: relative;
+  display: inline-block;
+}
+.center-banner {
+  height: 350px;
+  width: 620px;
+  background: linear-gradient(to right, #d090b3 0%, #edb9e6 100%);
+  margin-bottom: 170px;
   border-left: 1px solid white;
   border-right: 1px solid white;
-  font-size: 0;
   position: relative;
+  display: inline-block;
+}
+.right-banner {
+  height: 350px;
+  width: 620px;
+  background: linear-gradient(to right, #88cfdd 0%, #7cc0ce 100%);
+  margin-bottom: 170px;
+  position: relative;
+  display: inline-block;
 }
 .banner-image {
   top: 44px;
@@ -191,6 +222,9 @@ img {
   float: left;
 }
 /* various elements */
+.alert {
+  margin: 0px;
+}
 .container-fluid {
   padding-left: 50px;
   padding-right: 50px;

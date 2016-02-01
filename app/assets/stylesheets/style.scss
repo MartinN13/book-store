@@ -20,6 +20,7 @@ h2 {
 .vertical-align {
   line-height: 2;
 }
+
 /* style */
 body {
   background-color: #f2f5f7;
@@ -49,6 +50,11 @@ img {
 }
 
 /* banner */
+.banner-row {
+  position: relative;
+  width: 101vw;
+  left: calc(-50vw + 50%);
+}
 .left-banner {
   height: 350px;
   width: 620px;

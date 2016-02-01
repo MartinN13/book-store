@@ -15,18 +15,20 @@
   <h2 class="of-the-h2">Authors of the week</h2>
   <% @books.each do |book| %>
     <div class="row">
-      <div class="col-md-6">
-        <p class="author-week"><%= book.author %></p>
+      <div class="col-md-10">
+        <p class="author-week-author"><%= book.author %></p>
       </div>
     </div>
   <% end %>
   </div>
-  <div class="books-of-the-year">
-  <h2>Books of the week</h2>
+  <div class="books-of-the-week">
+  <h2 class="book-week-margin-1">Books of the week</h2>
   <% @books.each do |book| %>
-    <div class="row">
-      <div class="col-md-6">
-        <p class="author-week"><%= book.title %></p>
+    <div class="row book-week-margin-2">
+      <div class="col-md-10">
+        <%= link_to image_tag(book.image.url), book, class: 'book-week-image' %>
+        <p class="book-week-title"><%= book.title %></p>
+        <p class="book-week-author">by <%= book.author %></p>
       </div>
     </div>
   <% end %>
@@ -47,9 +49,10 @@
   <% @books.each do |book| %>
     <div class="col-md-4">
       <%= link_to image_tag(book.image.url), book, class: 'book-image' %>
-      <h2 class="title"><%= book.title %></h2>
-      <p class="author">by <%= book.author %></p>
-      <p class="description"><%= book.description %></p>
+      <h2 class="book-title"><%= book.title %></h2>
+      <p class="book-author">by <%= book.author %></p>
+      <p class="book-description"><%= book.description %></p>
+      <div class="book-separator"></div>
       <% if user_signed_in? %>
         <%= link_to 'Show', book %>
         <%= link_to 'Edit', edit_book_path(book) %>

@@ -281,7 +281,7 @@ img {
   left: calc(50% - 58.5px)
 }
 .separator {
-  border: 1px solid #e6eaed;
+  border: 1px transparent;
   margin-bottom: 80px;
 }
 .book-separator {
@@ -289,7 +289,7 @@ img {
   top: 212px;
   left: 20px;
   width: 432px;
-  border: 1px solid #e6eaed;
+  border: 1px transparent;
 }
 
 /* media queries */

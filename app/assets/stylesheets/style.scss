@@ -24,6 +24,7 @@ h2 {
 /* style */
 body {
   background-color: #f2f5f7;
+  font-family: -apple-system, Helvetica, Arial, sans-serif;
 }
 
 img {
@@ -48,11 +49,28 @@ img {
 .jcarousel li {
   float: left;
 }
-
+.jcarousel-control-prev {
+  position: absolute;
+  top: 253px;
+  float: left;
+  left: 30px;
+  font-size: 40px;
+  color: white;
+  text-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
+.jcarousel-control-next {
+  position: absolute;
+  top: 253px;
+  float: right;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  text-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+}
 /* banner */
 .banner-row {
   position: relative;
-  width: 101vw;
+  width: calc(100vw + 15px);
   left: calc(-50vw + 50%);
 }
 .left-banner {

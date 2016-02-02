@@ -62,8 +62,10 @@
     <div class="row book-week-margin-2">
       <div class="col-md-10">
         <%= link_to image_tag(book.image.url), book, class: 'book-week-image' %>
+        <div class="book-week-container">
         <p class="book-week-title"><%= book.title %></p>
         <p class="book-week-author">by <%= book.author %></p>
+        </div>
       </div>
     </div>
   <% end %>

@@ -10,7 +10,7 @@
               <h2 class="banner-title"><%= @books.find_by_id(1).title %></h2>
               <p class="banner-author">by <%= @books.find_by_id(1).author %></p>
               <p class="banner-description"><%= @books.find_by_id(1).description %></p>
-              <%= link_to 'See The Book', @books.find_by_id(1), class: 'banner-button' %>
+              <%= link_to 'See The Book', @books.find_by_id(1), class: 'left-banner-button' %>
             <% end %>
           </li>
           <li class="center-banner">
@@ -19,7 +19,7 @@
               <h2 class="banner-title"><%= @books.find_by_id(2).title %></h2>
               <p class="banner-author">by <%= @books.find_by_id(2).author %></p>
               <p class="banner-description"><%= @books.find_by_id(2).description %></p>
-              <%= link_to 'See The Book', @books.find_by_id(2), class: 'banner-button' %>
+              <%= link_to 'See The Book', @books.find_by_id(2), class: 'center-banner-button' %>
             <% end %>
           </li>
           <li class="right-banner">
@@ -28,7 +28,7 @@
               <h2 class="banner-title"><%= @books.find_by_id(3).title %></h2>
               <p class="banner-author">by <%= @books.find_by_id(3).author %></p>
               <p class="banner-description"><%= @books.find_by_id(3).description %></p>
-              <%= link_to 'See The Book', @books.find_by_id(3), class: 'banner-button' %>
+              <%= link_to 'See The Book', @books.find_by_id(3), class: 'right-banner-button' %>
             <% end %>
           </li>
         </ul>

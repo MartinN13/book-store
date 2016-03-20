@@ -1,7 +1,7 @@
 == Book store
 
 This is a book store concept running on Rails.
-The page can be viewed live [here](http://martin-nabhan-book-store.herokuapp.com)
+The page can be viewed live at http://martin-nabhan-book-store.herokuapp.com
 
 Things to implement:
 * Ratings system
